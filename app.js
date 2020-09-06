@@ -5,6 +5,8 @@ const dotenv = require('dotenv');
 const emailService = require("./routes/mail_service.route");
 dotenv.config();
 
+const PORT = process.env.PORT|80;
+
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded({extended: true,}));
 
@@ -17,5 +19,7 @@ app.get('/', (req, res) => {
     res.end(`Welcome to the service ${process.env.EMAIL}`)
 });
 
-app.listen(80, '127.0.0.1');
+app.listen(PORT, function(){
+
+});
 console.log('Node server running on port 3000');
