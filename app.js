@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const emailService = require("./routes/mail_service.route");
 dotenv.config();
 
-const PORT = process.env.PORT|80;
+const PORT = process.env.PORT|3000;
 
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded({extended: true,}));
