@@ -19,7 +19,9 @@ app.get('/', (req, res) => {
     res.end(`Welcome to the service ${process.env.EMAIL}`)
 });
 
-app.listen(PORT, function(){
 
+
+app.listen(PORT, function(){
+    console.log("listening on port");
 });
 console.log('Node server running on port 3000');
