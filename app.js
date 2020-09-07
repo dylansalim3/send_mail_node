@@ -16,7 +16,8 @@ app.use(express.json());
 app.use('/mail-service',emailService);
 
 app.get('/', (req, res) => {
-    res.end(`Welcome to the service ${process.env.EMAIL}`)
+    res.end(`Welcome to the service ${process.env.EMAIL}`);
+    res.status = 200;
 });
 
 
