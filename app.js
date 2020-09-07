@@ -23,6 +23,6 @@ app.get('/', (req, res) => {
 
 
 app.listen(PORT,'0.0.0.0', function(){
-    console.log(`listening on port ${PORT}`);
+    console.log(`listening on port ${PORT} ${HOST}`);
 });
 console.log(`Node server running on port ${PORT}`);
