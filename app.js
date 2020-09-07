@@ -1,9 +1,14 @@
 const express = require('express');
 const app = express();
 
-const dotenv = require('dotenv');
+
+if(process.env.NODE_ENV !== 'production'){
+    const dotenv = require('dotenv');
+    dotenv.config();
+}
+
 const emailService = require("./routes/mail_service.route");
-dotenv.config();
+
 
 const PORT = process.env.PORT||3000;
 
@@ -23,6 +28,6 @@ app.get('/', (req, res) => {
 
 
 app.listen(PORT,'0.0.0.0', function(){
-    console.log(`listening on port ${PORT} ${HOST}`);
+    console.log(`listening on port ${PORT}`);
 });
 console.log(`Node server running on port ${PORT}`);
