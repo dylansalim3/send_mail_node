@@ -2,6 +2,9 @@
   "name": "send-email",
   "version": "1.0.0",
   "description": "send email app",
+  "engines": {
+    "node": "8.x"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
