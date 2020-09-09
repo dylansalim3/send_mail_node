@@ -54,7 +54,7 @@ function sendEmail(receiverEmail, emailSubject, emailBody, res) {
     const mailOptions = {
         from: senderEmail,
         to: receiverEmail,
-        subject: 'Your secret password for Note It',
+        subject: emailSubject,
         text: emailBody,
     };
 
