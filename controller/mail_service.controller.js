@@ -17,6 +17,30 @@ exports.sendEmail = (req, res) => {
     const emailSubject = req.body.emailSubject;
     const emailBody = req.body.emailBody;
 
+    console.log(`${email} ${emailSubject} ${emailBody}`);
+    console.log(req.method);
+    if (req.method.toUpperCase() === "OPTIONS"){
+
+
+        // Echo back the Origin (calling domain) so that the
+        // client is granted access to make subsequent requests
+        // to the API.
+        res.writeHead(
+            "204",
+            "No Content",
+            {
+                "access-control-allow-origin": '*',
+                "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+                "access-control-allow-headers": "content-type, accept",
+                "access-control-max-age": 10, // Seconds.
+                "content-length": 0
+            }
+        );
+
+        // End the response - we're not sending back any content.
+        return( res.end() );
+    }
+
     sendEmail(email, emailSubject, emailBody, res);
 }
 
@@ -57,6 +81,15 @@ function sendEmail(receiverEmail, emailSubject, emailBody, res) {
         subject: emailSubject,
         text: emailBody,
     };
+
+//     header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Methods: POST');
+// header('Access-Control-Max-Age: 1000');
+
+
+
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
