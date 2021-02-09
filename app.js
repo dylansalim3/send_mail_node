@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
-app.use(cors());
-app.options('*', cors());
+app.use(cors({credentials: true, origin: true}));
 
 if(process.env.NODE_ENV !== 'production'){
     const dotenv = require('dotenv');
