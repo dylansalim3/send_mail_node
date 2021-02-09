@@ -1,19 +1,5 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');
-const corsOpts = {
-    origin: '*',
-  
-    methods: [
-      'GET',
-      'POST',
-    ],
-  
-    allowedHeaders: [
-      'Content-Type',
-    ],
-  };
-app.use(cors(corsOpts));
 
 if(process.env.NODE_ENV !== 'production'){
     const dotenv = require('dotenv');

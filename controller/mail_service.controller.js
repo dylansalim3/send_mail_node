@@ -69,6 +69,12 @@ exports.sendPortfolioEmail = (req, res) => {
 
     const { emailSubject, emailBody } = buildPortfolioEmailContent(portfolioTitle, senderName, senderSubject, senderEmail, senderMessage);
 
+
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
     sendEmail(receiverEmail, emailSubject, emailBody, res);
 }
 

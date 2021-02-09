@@ -7,6 +7,6 @@ emailService.post('/reset-secret-password', sendRestoreSecretPasswordEmail);
 
 emailService.post('/send-email', sendEmail);
 
-emailService.post('/send-portfolio-contact-form', sendPortfolioContactFormEmail);
+emailService.post('/send-portfolio-form', sendPortfolioContactFormEmail);
 
 module.exports = emailService;
