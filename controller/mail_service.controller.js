@@ -79,7 +79,7 @@ function sendEmail(receiverEmail, emailSubject, emailBody, res) {
         from: senderEmail,
         to: receiverEmail,
         subject: emailSubject,
-        text: emailBody,
+        html: emailBody,
     };
 
 //     header('Access-Control-Allow-Origin: *');
